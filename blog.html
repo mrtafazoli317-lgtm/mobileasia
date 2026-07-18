@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>وبلاگ موبایل آسیا | اخبار و راهنمای خرید موبایل</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,11 @@
     --orange: #ff6a1a; --orange-2: #d9540f; --orange-glow: rgba(255,106,26,0.22);
   }
   *{ margin:0; padding:0; box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ color-scheme: light; scroll-behavior:smooth; }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#ffffff; --panel:#fff6ee; --panel-2:#ffece0; --line:rgba(20,15,10,0.1); --text:#201a15; --text-dim:#7a726a; }
+    body{ background:#ffffff !important; color:#201a15 !important; }
+  }
   body{
     background: var(--bg);
     background-image: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,106,26,0.08), transparent);
@@ -92,14 +97,21 @@
   <section class="posts">
 
     <!-- POST CARD TEMPLATE — برای پست جدید این کارت رو کپی کنید و href رو به اسم فایل جدید تغییر بدید -->
-    <a class="post-card" href="post-template.html">
+    <a class="post-card" href="post-buying-guide.html">
       <div class="post-meta"><span class="cat">آموزش</span><span>۲۸ تیر ۱۴۰۵</span><span>۳ دقیقه مطالعه</span></div>
       <h2>راهنمای خرید آیفون دست دوم؛ چه نکاتی رو چک کنیم؟</h2>
       <p>قبل از خرید آیفون دست دوم حتماً این چند مورد رو بررسی کنید تا سرتون کلاه نره — از سلامت باتری تا اصالت قطعات.</p>
       <span class="read-more">ادامه مطلب ←</span>
     </a>
 
-    <a class="post-card" href="post-template.html">
+    <a class="post-card" href="post-battery-tips.html">
+      <div class="post-meta"><span class="cat">آموزش</span><span>۲۷ تیر ۱۴۰۵</span><span>۳ دقیقه مطالعه</span></div>
+      <h2>۶ نکته برای افزایش عمر باتری گوشی</h2>
+      <p>با چند تا عادت ساده می‌تونید عمر باتری گوشیتون رو چند برابر کنید و دیرتر نیاز به تعویض پیدا کنید.</p>
+      <span class="read-more">ادامه مطلب ←</span>
+    </a>
+
+    <a class="post-card" href="post-iphone17-vs-s24ultra.html">
       <div class="post-meta"><span class="cat">اخبار</span><span>۱۴ تیر ۱۴۰۵</span><span>۲ دقیقه مطالعه</span></div>
       <h2>مقایسه‌ی آیفون ۱۷ پرو مکس و گلکسی S24 اولترا</h2>
       <p>دو پرچمدار بازار رو از نظر دوربین، باتری و عملکرد کنار هم گذاشتیم تا ببینیم کدوم به‌صرفه‌تره.</p>
@@ -112,7 +124,7 @@
 
 <footer class="wrap">
   <span>© ۱۴۰۵ — موبایل آسیا</span>
-  <span>ملک، روبه‌روی بانک سپه · ۰۹۹۱۶۰۹۰۲۵۴</span>
+  <span>اراک، ملک، روبه‌روی بانک سپه · ۰۹۹۱۶۰۹۰۲۵۴</span>
 </footer>
 
 </body>

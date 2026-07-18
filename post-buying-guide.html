@@ -14,8 +14,11 @@
     --orange: #ff6a1a; --orange-2: #d9540f; --orange-glow: rgba(255,106,26,0.22);
   }
   *{ margin:0; padding:0; box-sizing:border-box; }
-  html{ color-scheme: light; }
-  html{ scroll-behavior:smooth; }
+  html{ color-scheme: light; scroll-behavior:smooth; }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#ffffff; --panel:#fff6ee; --panel-2:#ffece0; --line:rgba(20,15,10,0.1); --text:#201a15; --text-dim:#7a726a; }
+    body{ background:#ffffff !important; color:#201a15 !important; }
+  }
   body{ background: var(--bg); color: var(--text); font-family: 'Vazirmatn', sans-serif; line-height: 1.9; }
   @media (prefers-reduced-motion: reduce){ *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
   a{ color:inherit; text-decoration:none; }
