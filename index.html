@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موبایل آسیا | فروشگاه تخصصی آیفون، سامسونگ و لوازم جانبی اپل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #ffffff; --panel: #fff6ee; --panel-2: #ffece0;
+    --line: rgba(20,15,10,0.1); --text: #201a15; --text-dim: #7a726a;
+    --orange: #ff6a1a; --orange-2: #d9540f; --orange-glow: rgba(255,106,26,0.22);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ color-scheme: light; scroll-behavior:smooth; }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#ffffff; --panel:#fff6ee; --panel-2:#ffece0; --line:rgba(20,15,10,0.1); --text:#201a15; --text-dim:#7a726a; }
+    body{ background:#ffffff !important; color:#201a15 !important; }
+  }
+  body{
+    background: var(--bg); color: var(--text); font-family: 'Vazirmatn', sans-serif; line-height: 1.8;
+  }
+  @media (prefers-reduced-motion: reduce){ *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  a{ color:inherit; text-decoration:none; }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--orange); outline-offset: 3px; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width: 1080px; margin:0 auto; padding: 0 22px; }
+
+  header{ position: sticky; top:0; z-index: 20; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .header-row{ display:flex; align-items:center; justify-content:space-between; padding: 14px 0; gap:16px; flex-wrap:wrap; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ height:40px; width:auto; }
+  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
+  .brand-tabs a{ padding: 6px 14px; border-radius: 20px; color: var(--text-dim); border: 1px solid var(--line); transition: all .15s ease; }
+  .brand-tabs a.active{ background: var(--orange); color:#fff; border-color: var(--orange); }
+  .brand-tabs a:hover:not(.active){ border-color: var(--orange); color: var(--orange-2); }
+  .call-btn{ background: var(--orange); color:#fff; font-weight:700; font-size:0.85rem; padding: 9px 18px; border-radius: 30px; font-family:'IBM Plex Mono', monospace; transition: transform .15s ease, box-shadow .15s ease; }
+  .call-btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 22px -8px var(--orange-glow); }
+
+  /* hero */
+  .hero{
+    padding: 40px 0 20px;
+    display:flex; align-items:center; gap: 40px;
+    flex-wrap: wrap-reverse;
+  }
+  .hero-text{ flex: 1 1 340px; }
+  .hero-text .hero-logo{ height:52px; width:auto; margin-bottom:22px; }
+  .hero-text .eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:0.8rem; color: var(--orange-2); letter-spacing:0.1em; display:inline-block; margin-bottom:16px; }
+  .hero-text h1{ font-size: clamp(2rem, 5vw, 3rem); font-weight:900; line-height:1.35; margin-bottom:18px; }
+  .hero-text h1 span{ color: var(--orange); }
+  .hero-text p{ color: var(--text-dim); font-size:1.02rem; max-width:44ch; margin-bottom: 26px; }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn-primary{ background: var(--orange); color:#fff; font-weight:800; padding: 13px 26px; border-radius: 10px; font-size:0.95rem; transition: transform .15s ease; }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .btn-ghost{ border:1px solid var(--line); color:var(--text); padding: 13px 26px; border-radius:10px; font-size:0.95rem; transition: border-color .15s ease; }
+  .btn-ghost:hover{ border-color: var(--orange); }
+
+  .hero-media{
+    flex: 1 1 280px; display:flex; justify-content:center; position:relative;
+  }
+  .hero-media .glow{
+    position:absolute; inset:0; margin:auto; width:80%; height:80%;
+    background: radial-gradient(circle, rgba(255,106,26,0.18), transparent 70%);
+    filter: blur(10px); z-index:0;
+  }
+  .hero-media .phone-card{
+    position: relative; z-index:1;
+    background: #0c0c0f;
+    border-radius: 28px;
+    padding: 18px;
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.35);
+    max-width: 320px;
+  }
+  .hero-media .phone-card img{ border-radius: 16px; }
+
+  /* about */
+  .about{ padding: 50px 0; }
+  .about-card{ background: var(--panel); border:1px solid var(--line); border-radius:18px; padding: 32px 28px; }
+  .about-card .kicker{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--orange-2); letter-spacing:0.1em; margin-bottom:10px; display:block; }
+  .about-card h2{ font-size:1.5rem; font-weight:800; margin-bottom:16px; }
+  .about-card p{ color: var(--text-dim); font-size:1rem; margin-bottom:12px; }
+
+  /* categories */
+  .cats{ padding: 20px 0 50px; }
+  .cats h2{ font-size:1.4rem; font-weight:800; margin-bottom:20px; text-align:center; }
+  .cat-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+  .cat-card{
+    background: var(--panel); border:1px solid var(--line); border-radius:16px; padding:26px 22px;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .cat-card:hover{ transform: translateY(-4px); border-color: rgba(255,106,26,0.5); box-shadow: 0 16px 30px -20px var(--orange-glow); }
+  .cat-card h3{ font-size:1.1rem; font-weight:800; margin-bottom:8px; color: var(--orange-2); }
+  .cat-card p{ color: var(--text-dim); font-size:0.9rem; margin-bottom:14px; }
+  .cat-card .go{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--orange-2); }
+
+  /* contact */
+  .contact-section{ padding: 20px 0 60px; }
+  .contact-section h2{ font-size:1.4rem; font-weight:800; margin-bottom:20px; text-align:center; }
+  .contact{ background: var(--panel); border:1px solid var(--line); border-radius: 18px; padding: 34px 28px; display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .contact-item{ display:flex; gap:14px; align-items:flex-start; }
+  .contact-icon{ width:42px; height:42px; border-radius:10px; flex-shrink:0; background: rgba(255,106,26,0.14); color: var(--orange-2); display:flex; align-items:center; justify-content:center; font-size:1.2rem; }
+  .contact-item h4{ font-size:0.95rem; margin-bottom:4px; }
+  .contact-item p, .contact-item a{ color: var(--text-dim); font-size:0.92rem; }
+  .contact-item a:hover{ color: var(--orange-2); }
+  @media (max-width:620px){ .contact{ grid-template-columns: 1fr; } }
+
+  footer{ border-top:1px solid var(--line); padding: 26px 0 40px; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .footer-row img{ height:24px; }
+  footer .meta{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="موبایل آسیا"></a>
+    <div class="brand-tabs">
+      <a href="index.html" class="active">خانه</a>
+      <a href="mobileasia.html">آیفون</a>
+      <a href="samsung.html">سامسونگ</a>
+      <a href="blog.html">وبلاگ</a>
+    </div>
+    <a class="call-btn" href="tel:+989916090254">۰۹۹۱۶۰۹۰۲۵۴</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="hero-text">
+      <img class="hero-logo" src="assets/logo.png" alt="موبایل آسیا">
+      <span class="eyebrow">// فروشگاه تخصصی موبایل در اراک</span>
+      <h1><span>اورجینال‌ترین</span> آیفون و سامسونگ شهر</h1>
+      <p>فروش اورجینال‌ترین آیفون‌ها از سری ۱۱ تا ۱۷ پرومکس، گلکسی S20 تا S24 اولترا، به‌همراه ایرپاد و اپل‌واچ. تضمین اصالت کالا و مشاوره‌ی رایگان قبل از خرید.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="tel:+989916090254">تماس برای مشاوره و قیمت روز</a>
+        <a class="btn-ghost" href="mobileasia.html">مشاهده محصولات</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="glow"></div>
+      <div class="phone-card">
+        <img src="assets/iphone-hero.png" alt="آیفون ۱۷ پرو مکس">
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-card">
+      <span class="kicker">// داستان ما</span>
+      <h2>موبایل آسیا کیه؟</h2>
+      <p>موبایل آسیا حاصل تلاش یه جوون اراکیه که با پشتکار و صداقت، از صفر شروع کرد و قدم‌به‌قدم یکی از قابل‌اعتمادترین فروشگاه‌های موبایل شهر رو ساخت.</p>
+      <p>سال‌ها زحمت، صبر و تعهد به کیفیت باعث شده امروز موبایل آسیا به‌عنوان یه اسم قابل‌اعتماد تو ذهن مشتری‌های اراکی شناخته بشه — نتیجه‌ی جوونی که هیچ‌وقت از تلاش دست نکشید.</p>
+      <p>این مسیر، نمونه‌ی روشنی از اینه که با انگیزه، امانت‌داری و عشق به کار، می‌شه حتی تو یه بازار پررقابت هم اسمی ماندگار ساخت. موبایل آسیا امروز نتیجه‌ی همون تلاش خستگی‌ناپذیره.</p>
+    </div>
+  </section>
+
+  <section class="cats">
+    <h2>محصولات ما</h2>
+    <div class="cat-grid">
+      <a class="cat-card" href="mobileasia.html">
+        <h3>آیفون</h3>
+        <p>از آیفون ۱۱ تا جدیدترین سری ۱۷ پرومکس، به‌همراه ایرپاد و اپل‌واچ</p>
+        <span class="go">مشاهده مدل‌ها ←</span>
+      </a>
+      <a class="cat-card" href="samsung.html">
+        <h3>سامسونگ</h3>
+        <p>سری کامل گلکسی S، از S20 تا جدیدترین S24 اولترا</p>
+        <span class="go">مشاهده مدل‌ها ←</span>
+      </a>
+      <a class="cat-card" href="blog.html">
+        <h3>وبلاگ</h3>
+        <p>اخبار دنیای موبایل، مقایسه‌ی مدل‌ها و راهنمای خرید</p>
+        <span class="go">مطالعه مطالب ←</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>ارتباط با ما</h2>
+    <div class="contact">
+      <div class="contact-item">
+        <div class="contact-icon">☎</div>
+        <div>
+          <h4>شماره تماس</h4>
+          <a href="tel:+989916090254">۰۹۹۱۶۰۹۰۲۵۴</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">⚲</div>
+        <div>
+          <h4>آدرس فروشگاه</h4>
+          <p>اراک، ملک، روبه‌روی بانک سپه — موبایل آسیا</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="footer-row">
+    <img src="assets/logo.png" alt="موبایل آسیا">
+    <span class="meta">اراک، ملک، روبه‌روی بانک سپه · ۰۹۹۱۶۰۹۰۲۵۴</span>
+  </div>
+</footer>
+
+</body>
+</html>
