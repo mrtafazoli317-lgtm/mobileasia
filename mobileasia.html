@@ -54,8 +54,8 @@
     border-bottom: 1px solid var(--line);
   }
   .header-row{ display:flex; align-items:center; justify-content:space-between; padding: 16px 0; gap:16px; flex-wrap:wrap; }
-  .brand{ font-weight:900; font-size:1.3rem; display:flex; align-items:center; gap:10px; color: var(--orange-2); }
-  .brand .dot{ width:10px; height:10px; border-radius:3px; background: var(--orange); box-shadow: 0 0 14px 3px var(--orange-glow); }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ height:38px; width:auto; }
 
   .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
   .brand-tabs a{
@@ -227,8 +227,9 @@
 
 <header>
   <div class="wrap header-row">
-    <div class="brand"><span class="dot"></span>موبایل آسیا</div>
+    <a class="brand" href="index.html"><img src="logo.png" alt="موبایل آسیا"></a>
     <div class="brand-tabs">
+      <a href="index.html">خانه</a>
       <a href="mobileasia.html" class="active">آیفون</a>
       <a href="samsung.html">سامسونگ</a>
       <a href="blog.html">وبلاگ</a>

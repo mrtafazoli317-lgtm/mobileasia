@@ -26,8 +26,8 @@
 
   header{ position: sticky; top:0; z-index: 20; background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
   .header-row{ display:flex; align-items:center; justify-content:space-between; padding: 16px 0; gap:16px; flex-wrap:wrap; max-width:1080px; margin:0 auto; padding-inline:22px; }
-  .brand{ font-weight:900; font-size:1.3rem; display:flex; align-items:center; gap:10px; color: var(--orange-2); }
-  .brand .dot{ width:10px; height:10px; border-radius:3px; background: var(--orange); box-shadow: 0 0 14px 3px var(--orange-glow); }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ height:38px; width:auto; }
   .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
   .brand-tabs a{ padding: 6px 14px; border-radius: 20px; color: var(--text-dim); border: 1px solid var(--line); }
   .brand-tabs a.active{ background: var(--orange); color:#fff; border-color: var(--orange); }
@@ -49,8 +49,9 @@
 
 <header>
   <div class="header-row">
-    <div class="brand"><span class="dot"></span>موبایل آسیا</div>
+    <a class="brand" href="index.html"><img src="logo.png" alt="موبایل آسیا"></a>
     <div class="brand-tabs">
+      <a href="index.html">خانه</a>
       <a href="mobileasia.html">آیفون</a>
       <a href="samsung.html">سامسونگ</a>
       <a href="blog.html" class="active">وبلاگ</a>
