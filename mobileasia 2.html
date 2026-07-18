@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موبایل آسیا | فروش تخصصی آیفون و لوازم اپل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #ffffff;
+    --panel: #fff6ee;
+    --panel-2: #ffece0;
+    --line: rgba(20,15,10,0.1);
+    --text: #201a15;
+    --text-dim: #7a726a;
+    --orange: #ff6a1a;
+    --orange-2: #d9540f;
+    --orange-glow: rgba(255,106,26,0.22);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background: var(--bg);
+    background-image: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,106,26,0.08), transparent);
+    color: var(--text);
+    font-family: 'Vazirmatn', sans-serif;
+    line-height: 1.8;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  .wrap{ max-width: 1080px; margin:0 auto; padding: 0 22px; }
+
+  #phones, #accessories, #contact{ scroll-margin-top: 84px; }
+
+  /* header */
+  header{
+    position: sticky; top:0; z-index: 20;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-row{ display:flex; align-items:center; justify-content:space-between; padding: 16px 0; gap:16px; flex-wrap:wrap; }
+  .brand{ font-weight:900; font-size:1.3rem; display:flex; align-items:center; gap:10px; color: var(--orange-2); }
+  .brand .dot{ width:10px; height:10px; border-radius:3px; background: var(--orange); box-shadow: 0 0 14px 3px var(--orange-glow); }
+
+  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
+  .brand-tabs a{
+    padding: 6px 14px; border-radius: 20px; color: var(--text-dim);
+    border: 1px solid var(--line); transition: all .15s ease;
+  }
+  .brand-tabs a.active{ background: var(--orange); color:#fff; border-color: var(--orange); }
+  .brand-tabs a:hover:not(.active){ border-color: var(--orange); color: var(--orange-2); }
+
+  nav{ display:flex; gap:24px; font-size:0.92rem; color: var(--text-dim); }
+  nav a:hover{ color: var(--orange-2); }
+  .call-btn{
+    background: var(--orange);
+    color:#fff; font-weight:700; font-size:0.85rem;
+    padding: 9px 18px; border-radius: 30px;
+    font-family:'IBM Plex Mono', monospace;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .call-btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 22px -8px var(--orange-glow); }
+
+  /* hero */
+  .hero{ padding: 70px 0 50px; text-align:center; }
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:0.8rem; color: var(--orange-2);
+    letter-spacing:0.12em; display:inline-block; margin-bottom:18px;
+  }
+  .hero h1{
+    font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight:900; line-height:1.3;
+    max-width: 16ch; margin: 0 auto;
+  }
+  .hero h1 span{ color: var(--orange); }
+  .hero p{ margin: 20px auto 0; max-width: 46ch; color: var(--text-dim); font-size:1.02rem; }
+  .hero-actions{ margin-top: 28px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn-primary{
+    background: var(--orange); color:#fff; font-weight:800;
+    padding: 13px 26px; border-radius: 10px; font-size:0.95rem;
+    transition: transform .15s ease;
+  }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .btn-ghost{
+    border:1px solid var(--line); color:var(--text);
+    padding: 13px 26px; border-radius:10px; font-size:0.95rem;
+    transition: border-color .15s ease;
+  }
+  .btn-ghost:hover{ border-color: var(--orange); }
+
+  /* section label */
+  .section-head{ padding: 46px 0 22px; }
+  .section-head .kicker{
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--orange-2);
+    letter-spacing:0.1em; margin-bottom: 8px; display:block;
+  }
+  .section-head h2{ font-size: 1.7rem; font-weight:800; color: var(--orange-2); }
+
+  /* generation groups */
+  .gen-group{ margin-bottom: 30px; }
+  .gen-title{
+    display:flex; align-items:center; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:0.85rem; color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+  .gen-title::after{ content:''; flex:1; height:1px; background: var(--line); }
+  .gen-title b{ color: var(--orange-2); font-weight:600; }
+
+  .product-grid{
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(210px,1fr));
+    gap: 14px;
+  }
+  .product-card{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 18px;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .product-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(255,106,26,0.55);
+    box-shadow: 0 16px 30px -20px var(--orange-glow);
+  }
+
+  .thumb{
+    width:100%; height:96px; border-radius:10px; margin-bottom:14px;
+    background: radial-gradient(circle at 30% 20%, rgba(255,106,26,0.16), rgba(255,106,26,0.03));
+    border: 1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .thumb .icon{ width:40px; height:40px; color: var(--orange-2); }
+  .acc-card .thumb{ height:120px; margin-bottom:16px; }
+  .acc-card .thumb .icon{ width:52px; height:52px; }
+
+  .product-card .model{ font-weight:800; font-size:1.05rem; margin-bottom:6px; color: var(--orange-2); }
+  .product-card .badge{
+    display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.68rem;
+    color: var(--orange-2); border:1px solid rgba(217,84,15,0.3);
+    padding: 2px 8px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .product-card .price{
+    font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color: var(--text-dim);
+  }
+
+  /* accessories */
+  .acc-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:18px; }
+  .acc-card{
+    background: linear-gradient(160deg, var(--panel-2), var(--panel));
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 22px;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .acc-card:hover{ transform: translateY(-4px); border-color: rgba(255,106,26,0.55); }
+  .acc-card h3{ font-size:1.2rem; font-weight:800; margin-bottom:8px; color: var(--orange-2); }
+  .acc-card p{ color: var(--text-dim); font-size:0.92rem; margin-bottom: 14px; }
+  .acc-card .price{ font-family:'IBM Plex Mono', monospace; font-size:0.85rem; color: var(--orange-2); }
+
+  /* contact */
+  .contact{
+    margin: 20px 0 50px;
+    background: var(--panel);
+    border:1px solid var(--line);
+    border-radius: 18px;
+    padding: 34px 28px;
+    display:grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .contact-item{ display:flex; gap:14px; align-items:flex-start; }
+  .contact-icon{
+    width:42px; height:42px; border-radius:10px; flex-shrink:0;
+    background: rgba(255,106,26,0.14); color: var(--orange-2);
+    display:flex; align-items:center; justify-content:center; font-size:1.2rem;
+  }
+  .contact-item h4{ font-size:0.95rem; margin-bottom:4px; }
+  .contact-item p, .contact-item a{ color: var(--text-dim); font-size:0.92rem; }
+  .contact-item a:hover{ color: var(--orange-2); }
+
+  @media (max-width:620px){
+    .contact{ grid-template-columns: 1fr; }
+  }
+
+  /* footer */
+  footer{
+    border-top:1px solid var(--line); padding: 26px 0 40px;
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--text-dim);
+    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  }
+</style>
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+    <rect x="6" y="2" width="12" height="20" rx="2.4"/>
+    <line x1="10.5" y1="19" x2="13.5" y2="19" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-buds" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+    <path d="M8 3c1.8 0 3 1.3 3 3.2V11c0 1.6-1.2 2.6-2.6 2.6S6 12.6 6 11" stroke-linecap="round"/>
+    <rect x="6.4" y="13.4" width="3.2" height="7" rx="1.6"/>
+    <path d="M16 3c1.8 0 3 1.3 3 3.2V11c0 1.6-1.2 2.6-2.6 2.6S14 12.6 14 11" stroke-linecap="round"/>
+    <rect x="14.4" y="13.4" width="3.2" height="7" rx="1.6"/>
+  </symbol>
+  <symbol id="icon-watch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+    <rect x="7" y="7" width="10" height="12" rx="3"/>
+    <line x1="9.5" y1="2.5" x2="9.5" y2="7" stroke-linecap="round"/>
+    <line x1="14.5" y1="2.5" x2="14.5" y2="7" stroke-linecap="round"/>
+    <line x1="9.5" y1="19" x2="9.5" y2="21.5" stroke-linecap="round"/>
+    <line x1="14.5" y1="19" x2="14.5" y2="21.5" stroke-linecap="round"/>
+    <line x1="17" y1="10.5" x2="18.4" y2="10.5" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap header-row">
+    <div class="brand"><span class="dot"></span>موبایل آسیا</div>
+    <div class="brand-tabs">
+      <a href="mobileasia.html" class="active">آیفون</a>
+      <a href="samsung.html">سامسونگ</a>
+    </div>
+    <nav>
+      <a href="#phones">گوشی‌ها</a>
+      <a href="#accessories">لوازم جانبی</a>
+      <a href="#contact">تماس با ما</a>
+    </nav>
+    <a class="call-btn" href="tel:+989916090254">۰۹۹۱۶۰۹۰۲۵۴</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <span class="eyebrow">// نمایندگی فروش آیفون و لوازم جانبی اپل</span>
+    <h1>موبایل <span>آسیا</span>، اورجینال‌ترین آیفون‌های شهر</h1>
+    <p>از آیفون ۱۱ تا جدیدترین سری ۱۷ پرومکس، به‌همراه ایرپاد و اپل‌واچ. تضمین اصالت کالا، مشاوره رایگان قبل از خرید.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="tel:+989916090254">تماس برای قیمت روز</a>
+      <a class="btn-ghost" href="#phones">مشاهده مدل‌ها</a>
+    </div>
+  </section>
+
+  <section id="phones">
+    <div class="section-head">
+      <span class="kicker">// PHONES</span>
+      <h2>سری کامل آیفون</h2>
+    </div>
+
+    <div class="gen-group">
+      <div class="gen-title"><b>iPhone 11</b> سری</div>
+      <div class="product-grid">
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      </div>
+    </div>
+
+    <div class="gen-group">
+      <div class="gen-title"><b>iPhone 12</b> سری</div>
+      <div class="product-grid">
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ مینی</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ پرو مکس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      </div>
+    </div>
+
+    <div class="gen-group">
+      <div class="gen-title"><b>iPhone 13</b> سری</div>
+      <div class="product-grid">
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ مینی</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      </div>
+    </div>
+
+    <div class="gen-group">
+      <div class="gen-title"><b>iPhone 14</b> سری</div>
+      <div class="product-grid">
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      </div>
+    </div>
+
+    <div class="gen-group">
+      <div class="gen-title"><b>iPhone 15</b> سری</div>
+      <div class="product-grid">
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      </div>
+    </div>
+
+    <div class="gen-group">
+      <div class="gen-title"><b>iPhone 16</b> سری</div>
+      <div class="product-grid">
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ ای (16e)</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      </div>
+    </div>
+
+    <div class="gen-group">
+      <div class="gen-title"><b>iPhone 17</b> سری — جدیدترین</div>
+      <div class="product-grid">
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ایر (17 Air)</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ / ۱ ترابایت</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="accessories">
+    <div class="section-head">
+      <span class="kicker">// ACCESSORIES</span>
+      <h2>لوازم جانبی اپل</h2>
+    </div>
+    <div class="acc-grid">
+      <div class="acc-card">
+        <div class="thumb"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-buds"/></svg></div>
+        <h3>ایرپاد (AirPods)</h3>
+        <p>ایرپاد نسل ۲، ۳، ایرپاد پرو ۲ و ایرپاد مکس — موجود با گارانتی اصالت کالا.</p>
+        <div class="price">قیمت روز: تماس بگیرید</div>
+      </div>
+      <div class="acc-card">
+        <div class="thumb"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-watch"/></svg></div>
+        <h3>اپل واچ (Apple Watch)</h3>
+        <p>سری ۹، سری ۱۰، اولترا ۲ و SE در سایزها و رنگ‌های مختلف موجود است.</p>
+        <div class="price">قیمت روز: تماس بگیرید</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head">
+      <span class="kicker">// CONTACT</span>
+      <h2>ارتباط با موبایل آسیا</h2>
+    </div>
+    <div class="contact">
+      <div class="contact-item">
+        <div class="contact-icon">☎</div>
+        <div>
+          <h4>شماره تماس</h4>
+          <a href="tel:+989916090254">۰۹۹۱۶۰۹۰۲۵۴</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">⚲</div>
+        <div>
+          <h4>آدرس فروشگاه</h4>
+          <p>ملک، روبه‌روی بانک سپه — موبایل آسیا</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© ۱۴۰۵ — موبایل آسیا</span>
+  <span>ملک، روبه‌روی بانک سپه · ۰۹۹۱۶۰۹۰۲۵۴</span>
+</footer>
+
+</body>
+</html>
