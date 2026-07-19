@@ -52,6 +52,40 @@
   .hero-text h1 span{ color: var(--orange); }
   .hero-text p{ color: var(--text-dim); font-size:1.02rem; max-width:44ch; margin-bottom: 26px; }
   .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  /* search */
+  .search-section{ padding: 10px 0 10px; }
+  .search-box{ position:relative; max-width: 560px; margin: 0 auto; }
+  .search-box input{
+    width:100%; padding: 15px 50px 15px 18px; border-radius: 14px;
+    border: 1.5px solid var(--line); background: var(--panel);
+    font-family:'Vazirmatn', sans-serif; font-size:1rem; color: var(--text);
+    outline: none; transition: border-color .15s ease;
+  }
+  .search-box input:focus{ border-color: var(--orange); }
+  .search-box .search-icon{
+    position:absolute; right:16px; top:50%; transform:translateY(-50%);
+    color: var(--orange-2); font-size:1.1rem; pointer-events:none;
+  }
+  .search-results{
+    position:absolute; top:calc(100% + 8px); right:0; left:0;
+    background: #fff; border:1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.25);
+    max-height: 340px; overflow-y:auto; z-index: 30; display:none;
+  }
+  .search-results.show{ display:block; }
+  .search-results a{
+    display:flex; justify-content:space-between; align-items:center;
+    padding: 13px 18px; border-bottom: 1px solid var(--line); font-size:0.95rem;
+    transition: background .15s ease;
+  }
+  .search-results a:last-child{ border-bottom:none; }
+  .search-results a:hover{ background: var(--panel); }
+  .search-results a .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color: var(--orange-2);
+    border:1px solid rgba(217,84,15,0.3); padding:2px 9px; border-radius:20px;
+  }
+  .search-results .no-result{ padding: 16px 18px; color: var(--text-dim); font-size:0.9rem; }
   .btn-primary{ background: var(--orange); color:#fff; font-weight:800; padding: 13px 26px; border-radius: 10px; font-size:0.95rem; transition: transform .15s ease; }
   .btn-primary:hover{ transform: translateY(-2px); }
   .btn-ghost{ border:1px solid var(--line); color:var(--text); padding: 13px 26px; border-radius:10px; font-size:0.95rem; transition: border-color .15s ease; }
@@ -148,6 +182,14 @@
     </div>
   </section>
 
+  <section class="search-section">
+    <div class="search-box">
+      <input type="text" id="productSearch" placeholder="اسم محصول رو جستجو کنید... مثلا آیفون ۱۵" autocomplete="off">
+      <span class="search-icon">⌕</span>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </section>
+
   <section class="about">
     <div class="about-card">
       <span class="kicker">// داستان ما</span>
@@ -208,5 +250,79 @@
   </div>
 </footer>
 
+<script>
+  var products = [
+    {name:"آیفون ۱۱", cat:"آیفون", url:"mobileasia.html#p1"},
+    {name:"آیفون ۱۱ پرو", cat:"آیفون", url:"mobileasia.html#p2"},
+    {name:"آیفون ۱۱ پرو مکس", cat:"آیفون", url:"mobileasia.html#p3"},
+    {name:"آیفون ۱۲", cat:"آیفون", url:"mobileasia.html#p4"},
+    {name:"آیفون ۱۲ مینی", cat:"آیفون", url:"mobileasia.html#p5"},
+    {name:"آیفون ۱۲ پرو", cat:"آیفون", url:"mobileasia.html#p6"},
+    {name:"آیفون ۱۲ پرو مکس", cat:"آیفون", url:"mobileasia.html#p7"},
+    {name:"آیفون ۱۳", cat:"آیفون", url:"mobileasia.html#p8"},
+    {name:"آیفون ۱۳ مینی", cat:"آیفون", url:"mobileasia.html#p9"},
+    {name:"آیفون ۱۳ پرو", cat:"آیفون", url:"mobileasia.html#p10"},
+    {name:"آیفون ۱۳ پرو مکس", cat:"آیفون", url:"mobileasia.html#p11"},
+    {name:"آیفون ۱۴", cat:"آیفون", url:"mobileasia.html#p12"},
+    {name:"آیفون ۱۴ پلاس", cat:"آیفون", url:"mobileasia.html#p13"},
+    {name:"آیفون ۱۴ پرو", cat:"آیفون", url:"mobileasia.html#p14"},
+    {name:"آیفون ۱۴ پرو مکس", cat:"آیفون", url:"mobileasia.html#p15"},
+    {name:"آیفون ۱۵", cat:"آیفون", url:"mobileasia.html#p16"},
+    {name:"آیفون ۱۵ پلاس", cat:"آیفون", url:"mobileasia.html#p17"},
+    {name:"آیفون ۱۵ پرو", cat:"آیفون", url:"mobileasia.html#p18"},
+    {name:"آیفون ۱۵ پرو مکس", cat:"آیفون", url:"mobileasia.html#p19"},
+    {name:"آیفون ۱۶", cat:"آیفون", url:"mobileasia.html#p20"},
+    {name:"آیفون ۱۶ پلاس", cat:"آیفون", url:"mobileasia.html#p21"},
+    {name:"آیفون ۱۶ پرو", cat:"آیفون", url:"mobileasia.html#p22"},
+    {name:"آیفون ۱۶ پرو مکس", cat:"آیفون", url:"mobileasia.html#p23"},
+    {name:"آیفون ۱۶ ای (16e)", cat:"آیفون", url:"mobileasia.html#p24"},
+    {name:"آیفون ۱۷", cat:"آیفون", url:"mobileasia.html#p25"},
+    {name:"آیفون ایر (17 Air)", cat:"آیفون", url:"mobileasia.html#p26"},
+    {name:"آیفون ۱۷ پرو", cat:"آیفون", url:"mobileasia.html#p27"},
+    {name:"آیفون ۱۷ پرو مکس", cat:"آیفون", url:"mobileasia.html#p28"},
+    {name:"ایرپاد (AirPods)", cat:"لوازم جانبی", url:"mobileasia.html#acc1"},
+    {name:"اپل واچ (Apple Watch)", cat:"لوازم جانبی", url:"mobileasia.html#acc2"},
+    {name:"گلکسی S20", cat:"سامسونگ", url:"samsung.html#s1"},
+    {name:"گلکسی S20 پلاس", cat:"سامسونگ", url:"samsung.html#s2"},
+    {name:"گلکسی S20 اولترا", cat:"سامسونگ", url:"samsung.html#s3"},
+    {name:"گلکسی S20 FE", cat:"سامسونگ", url:"samsung.html#s4"},
+    {name:"گلکسی S21", cat:"سامسونگ", url:"samsung.html#s5"},
+    {name:"گلکسی S21 پلاس", cat:"سامسونگ", url:"samsung.html#s6"},
+    {name:"گلکسی S21 اولترا", cat:"سامسونگ", url:"samsung.html#s7"},
+    {name:"گلکسی S21 FE", cat:"سامسونگ", url:"samsung.html#s8"},
+    {name:"گلکسی S22", cat:"سامسونگ", url:"samsung.html#s9"},
+    {name:"گلکسی S22 پلاس", cat:"سامسونگ", url:"samsung.html#s10"},
+    {name:"گلکسی S22 اولترا", cat:"سامسونگ", url:"samsung.html#s11"},
+    {name:"گلکسی S23", cat:"سامسونگ", url:"samsung.html#s12"},
+    {name:"گلکسی S23 پلاس", cat:"سامسونگ", url:"samsung.html#s13"},
+    {name:"گلکسی S23 اولترا", cat:"سامسونگ", url:"samsung.html#s14"},
+    {name:"گلکسی S23 FE", cat:"سامسونگ", url:"samsung.html#s15"},
+    {name:"گلکسی S24", cat:"سامسونگ", url:"samsung.html#s16"},
+    {name:"گلکسی S24 پلاس", cat:"سامسونگ", url:"samsung.html#s17"},
+    {name:"گلکسی S24 اولترا", cat:"سامسونگ", url:"samsung.html#s18"},
+    {name:"گلکسی S24 FE", cat:"سامسونگ", url:"samsung.html#s19"}
+  ];
+
+  var input = document.getElementById('productSearch');
+  var resultsBox = document.getElementById('searchResults');
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim();
+    if(!q){ resultsBox.classList.remove('show'); resultsBox.innerHTML=''; return; }
+    var matches = products.filter(function(p){ return p.name.indexOf(q) !== -1; });
+    if(matches.length === 0){
+      resultsBox.innerHTML = '<div class="no-result">محصولی با این اسم پیدا نشد</div>';
+    } else {
+      resultsBox.innerHTML = matches.slice(0,10).map(function(p){
+        return '<a href="'+p.url+'">'+p.name+'<span class="tag">'+p.cat+'</span></a>';
+      }).join('');
+    }
+    resultsBox.classList.add('show');
+  });
+
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.search-box')){ resultsBox.classList.remove('show'); }
+  });
+</script>
 </body>
 </html>

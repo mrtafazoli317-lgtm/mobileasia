@@ -125,12 +125,14 @@
     gap: 14px;
   }
   .product-card{
+    scroll-margin-top: 100px;
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 20px 18px;
     transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
   }
+  .product-card:target{ border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,106,26,0.25); }
   .product-card:hover{
     transform: translateY(-4px);
     border-color: rgba(255,106,26,0.55);
@@ -160,12 +162,14 @@
   /* accessories */
   .acc-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:18px; }
   .acc-card{
+    scroll-margin-top: 100px;
     background: linear-gradient(160deg, var(--panel-2), var(--panel));
     border: 1px solid var(--line);
     border-radius: 16px;
     padding: 26px 22px;
     transition: transform .2s ease, border-color .2s ease;
   }
+  .acc-card:target{ border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,106,26,0.25); }
   .acc-card:hover{ transform: translateY(-4px); border-color: rgba(255,106,26,0.55); }
   .acc-card h3{ font-size:1.2rem; font-weight:800; margin-bottom:8px; color: var(--orange-2); }
   .acc-card p{ color: var(--text-dim); font-size:0.92rem; margin-bottom: 14px; }
@@ -264,70 +268,70 @@
     <div class="gen-group">
       <div class="gen-title"><b>iPhone 11</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p1"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p2"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p3"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۱ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>iPhone 12</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ مینی</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ پرو مکس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p4"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p5"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ مینی</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p6"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p7"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۲ پرو مکس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>iPhone 13</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ مینی</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p8"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p9"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ مینی</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p10"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p11"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۳ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>iPhone 14</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p12"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p13"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p14"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p15"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۴ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>iPhone 15</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p16"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p17"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p18"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p19"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۵ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>iPhone 16</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ ای (16e)</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p20"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p21"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p22"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p23"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p24"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۶ ای (16e)</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>iPhone 17</b> سری — جدیدترین</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ایر (17 Air)</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ / ۱ ترابایت</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p25"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p26"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ایر (17 Air)</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p27"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="p28"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">آیفون ۱۷ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ / ۱ ترابایت</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
   </section>
@@ -338,13 +342,13 @@
       <h2>لوازم جانبی اپل</h2>
     </div>
     <div class="acc-grid">
-      <div class="acc-card">
+      <div class="acc-card" id="acc1">
         <div class="thumb"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-buds"/></svg></div>
         <h3>ایرپاد (AirPods)</h3>
         <p>ایرپاد نسل ۲، ۳، ایرپاد پرو ۲ و ایرپاد مکس — موجود با گارانتی اصالت کالا.</p>
         <div class="price">قیمت روز: تماس بگیرید</div>
       </div>
-      <div class="acc-card">
+      <div class="acc-card" id="acc2">
         <div class="thumb"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-watch"/></svg></div>
         <h3>اپل واچ (Apple Watch)</h3>
         <p>سری ۹، سری ۱۰، اولترا ۲ و SE در سایزها و رنگ‌های مختلف موجود است.</p>

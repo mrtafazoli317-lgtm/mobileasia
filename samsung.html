@@ -121,12 +121,14 @@
     gap: 14px;
   }
   .product-card{
+    scroll-margin-top: 100px;
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 20px 18px;
     transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
   }
+  .product-card:target{ border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,106,26,0.25); }
   .product-card:hover{
     transform: translateY(-4px);
     border-color: rgba(255,106,26,0.55);
@@ -227,49 +229,49 @@
     <div class="gen-group">
       <div class="gen-title"><b>Galaxy S20</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S20</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S20 پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S20 اولترا</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S20 FE</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s1"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S20</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s2"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S20 پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s3"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S20 اولترا</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s4"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S20 FE</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>Galaxy S21</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S21</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S21 پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S21 اولترا</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S21 FE</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s5"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S21</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s6"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S21 پلاس</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s7"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S21 اولترا</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s8"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S21 FE</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>Galaxy S22</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S22</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S22 پلاس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S22 اولترا</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s9"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S22</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s10"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S22 پلاس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s11"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S22 اولترا</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>Galaxy S23</b> سری</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S23</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S23 پلاس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S23 اولترا</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S23 FE</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s12"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S23</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s13"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S23 پلاس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s14"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S23 اولترا</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s15"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S23 FE</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
 
     <div class="gen-group">
       <div class="gen-title"><b>Galaxy S24</b> سری — جدیدترین</div>
       <div class="product-grid">
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S24</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S24 پلاس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S24 اولترا</div><span class="badge">۲۵۶ / ۵۱۲ / ۱ ترابایت</span><div class="price">قیمت روز: تماس بگیرید</div></div>
-        <div class="product-card"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S24 FE</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s16"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S24</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s17"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S24 پلاس</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s18"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S24 اولترا</div><span class="badge">۲۵۶ / ۵۱۲ / ۱ ترابایت</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+        <div class="product-card" id="s19"><div class="thumb"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></div><div class="model">گلکسی S24 FE</div><span class="badge">۱۲۸ / ۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
       </div>
     </div>
   </section>
