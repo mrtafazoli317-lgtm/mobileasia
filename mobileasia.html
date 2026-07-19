@@ -57,7 +57,9 @@
   .brand{ display:flex; align-items:center; gap:10px; }
   .brand img{ height:38px; width:auto; }
 
-  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
+  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; overflow-x:auto; scrollbar-width:none; max-width:100%; }
+  .brand-tabs::-webkit-scrollbar{ display:none; }
+  .brand-tabs a{ flex-shrink:0; }
   .brand-tabs a{
     padding: 6px 14px; border-radius: 20px; color: var(--text-dim);
     border: 1px solid var(--line); transition: all .15s ease;

@@ -32,7 +32,9 @@
   .header-row{ display:flex; align-items:center; justify-content:space-between; padding: 14px 0; gap:16px; flex-wrap:wrap; }
   .brand{ display:flex; align-items:center; gap:10px; }
   .brand img{ height:40px; width:auto; }
-  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
+  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; overflow-x:auto; scrollbar-width:none; max-width:100%; }
+  .brand-tabs::-webkit-scrollbar{ display:none; }
+  .brand-tabs a{ flex-shrink:0; }
   .brand-tabs a{ padding: 6px 14px; border-radius: 20px; color: var(--text-dim); border: 1px solid var(--line); transition: all .15s ease; }
   .brand-tabs a.active{ background: var(--orange); color:#fff; border-color: var(--orange); }
   .brand-tabs a:hover:not(.active){ border-color: var(--orange); color: var(--orange-2); }
@@ -195,17 +197,6 @@
     <a class="call-btn" href="tel:+989916090254">۰۹۹۱۶۰۹۰۲۵۴</a>
   </div>
 </header>
-
-<div class="wrap cat-strip">
-  <div class="cat-strip-scroll">
-    <a class="cat-strip-item" href="mobileasia.html"><div class="icon-circle">📱</div><span class="label">آیفون</span></a>
-    <a class="cat-strip-item" href="samsung.html"><div class="icon-circle">📱</div><span class="label">سامسونگ</span></a>
-    <a class="cat-strip-item" href="used-phones.html"><div class="icon-circle">♻</div><span class="label">کار کرده</span></a>
-    <a class="cat-strip-item" href="guard-glass.html"><div class="icon-circle">🛡</div><span class="label">گارد و گلس</span></a>
-    <a class="cat-strip-item" href="mobileasia.html#accessories"><div class="icon-circle">🎧</div><span class="label">لوازم جانبی</span></a>
-    <a class="cat-strip-item" href="blog.html"><div class="icon-circle">✎</div><span class="label">وبلاگ</span></a>
-  </div>
-</div>
 
 <main class="wrap">
 

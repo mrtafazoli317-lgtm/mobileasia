@@ -28,7 +28,9 @@
   .header-row{ display:flex; align-items:center; justify-content:space-between; padding: 16px 0; gap:16px; flex-wrap:wrap; max-width:1080px; margin:0 auto; padding-inline:22px; }
   .brand{ display:flex; align-items:center; gap:10px; }
   .brand img{ height:38px; width:auto; }
-  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; }
+  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; overflow-x:auto; scrollbar-width:none; max-width:100%; }
+  .brand-tabs::-webkit-scrollbar{ display:none; }
+  .brand-tabs a{ flex-shrink:0; }
   .brand-tabs a{ padding: 6px 14px; border-radius: 20px; color: var(--text-dim); border: 1px solid var(--line); }
   .brand-tabs a.active{ background: var(--orange); color:#fff; border-color: var(--orange); }
   .call-btn{ background: var(--orange); color:#fff; font-weight:700; font-size:0.85rem; padding: 9px 18px; border-radius: 30px; font-family:'IBM Plex Mono', monospace; }
