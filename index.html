@@ -74,22 +74,75 @@
   .row-scroll .product-card .badge{ display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.66rem; color: var(--orange-2); border:1px solid rgba(217,84,15,0.3); padding: 2px 8px; border-radius: 20px; margin-bottom: 10px; }
   .row-scroll .product-card .price{ font-family:'IBM Plex Mono', monospace; font-size:0.76rem; color: var(--text-dim); }
 
-  /* hero */
-  .hero{
-    padding: 40px 0 20px;
-    display:flex; align-items:center; gap: 40px;
-    flex-wrap: wrap-reverse;
+  /* fullscreen hero */
+  @keyframes fadeUp{
+    from{ opacity:0; transform: translateY(30px); }
+    to{ opacity:1; transform: translateY(0); }
   }
-  .hero-text{ flex: 1 1 340px; }
-  .hero-text .hero-logo{ height:52px; width:auto; margin-bottom:22px; }
-  .hero-text .eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:0.8rem; color: var(--orange-2); letter-spacing:0.1em; display:inline-block; margin-bottom:16px; }
-  .hero-text h1{ font-size: clamp(2rem, 5vw, 3rem); font-weight:900; line-height:1.35; margin-bottom:18px; }
-  .hero-text h1 span{ color: var(--orange); }
-  .hero-text p{ color: var(--text-dim); font-size:1.02rem; max-width:44ch; margin-bottom: 26px; }
-  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .fs-hero{
+    position: relative;
+    min-height: calc(100svh - 68px);
+    display:flex; align-items:center;
+    overflow:hidden;
+    background:#0a0a0c;
+  }
+  .fs-hero .bg-media{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit: cover; object-position: center 20%;
+    filter: brightness(0.6);
+  }
+  .fs-hero .bg-overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(10,10,12,0.55) 0%, rgba(10,10,12,0.35) 40%, rgba(10,10,12,0.85) 100%),
+                linear-gradient(90deg, rgba(10,10,12,0.75) 0%, rgba(10,10,12,0.15) 60%);
+  }
+  .fs-hero .content{ position:relative; z-index:2; padding: 70px 0; width:100%; }
+  .fs-hero .tagline{
+    display:flex; align-items:center; gap:10px;
+    color: rgba(255,255,255,0.75); font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem; letter-spacing:0.25em; margin-bottom: 22px;
+    opacity:0; animation: fadeUp 0.8s ease-out forwards;
+  }
+  .fs-hero .tagline .crown{ color: var(--orange); font-size:1rem; }
+  .fs-hero h1.big{
+    font-weight:900; color:#fff; line-height:1.15; letter-spacing:-0.01em;
+    font-size: clamp(2.6rem, 8vw, 5.2rem);
+    opacity:0; animation: fadeUp 0.8s ease-out 0.2s forwards;
+  }
+  .fs-hero h1.big span{ display:block; }
+  .fs-hero h1.big .accent{ color: var(--orange); }
+  .fs-hero .sub{
+    color: rgba(255,255,255,0.72); font-size:1rem; max-width:40ch; margin-top:22px; line-height:1.9;
+    opacity:0; animation: fadeUp 0.8s ease-out 0.4s forwards;
+  }
+  .fs-hero .sub b{ color:#fff; }
+  .fs-hero .cta-row{
+    display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-top: 34px;
+    opacity:0; animation: fadeUp 0.8s ease-out 0.6s forwards;
+  }
+  .fs-hero .btn-black{
+    display:inline-flex; align-items:center; gap:8px;
+    background:#fff; color:#0a0a0c; font-weight:800;
+    padding: 15px 28px; border-radius:10px; font-size:0.8rem;
+    letter-spacing:0.15em; text-transform:uppercase;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .fs-hero .btn-black:hover{ transform: translateY(-2px); background: var(--orange); color:#fff; }
+  .fs-hero .badge-mini{ display:flex; align-items:center; gap:10px; color:rgba(255,255,255,0.65); }
+  .fs-hero .badge-mini .ic{ font-size:1.6rem; color: var(--orange); }
+  .fs-hero .badge-mini .txt{ font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; line-height:1.6; }
+  .fs-hero .stats-row{
+    display:flex; flex-wrap:wrap; gap: 34px; margin-top: 50px;
+    opacity:0; animation: fadeUp 0.8s ease-out 0.8s forwards;
+  }
+  .fs-hero .stat b{ display:block; color:#fff; font-size: clamp(1.5rem,3.5vw,2.4rem); font-weight:800; }
+  .fs-hero .stat span{ color:rgba(255,255,255,0.55); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; margin-top:4px; display:block; }
+  @media (max-width:640px){
+    .fs-hero .bg-media{ object-position: 65% 20%; }
+  }
 
   /* search */
-  .search-section{ padding: 10px 0 10px; }
+  .search-section{ padding: 34px 0 10px; }
   .search-box{ position:relative; max-width: 560px; margin: 0 auto; }
   .search-box input{
     width:100%; padding: 15px 50px 15px 18px; border-radius: 14px;
@@ -125,24 +178,6 @@
   .btn-primary:hover{ transform: translateY(-2px); }
   .btn-ghost{ border:1px solid var(--line); color:var(--text); padding: 13px 26px; border-radius:10px; font-size:0.95rem; transition: border-color .15s ease; }
   .btn-ghost:hover{ border-color: var(--orange); }
-
-  .hero-media{
-    flex: 1 1 280px; display:flex; justify-content:center; position:relative;
-  }
-  .hero-media .glow{
-    position:absolute; inset:0; margin:auto; width:80%; height:80%;
-    background: radial-gradient(circle, rgba(255,106,26,0.18), transparent 70%);
-    filter: blur(10px); z-index:0;
-  }
-  .hero-media .phone-card{
-    position: relative; z-index:1;
-    background: #0c0c0f;
-    border-radius: 28px;
-    padding: 18px;
-    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.35);
-    max-width: 320px;
-  }
-  .hero-media .phone-card img{ border-radius: 16px; }
 
   /* about */
   .about{ padding: 50px 0; }
@@ -198,26 +233,33 @@
   </div>
 </header>
 
-<main class="wrap">
+<section class="fs-hero">
+  <img class="bg-media" src="iphone-hero.png" alt="آیفون ۱۷ پرو مکس">
+  <div class="bg-overlay"></div>
+  <div class="wrap content">
+    <div class="tagline"><span class="crown">♛</span> فروشگاه تخصصی موبایل در اراک</div>
+    <h1 class="big">
+      <span>اورجینال.</span>
+      <span>مطمئن.</span>
+      <span class="accent">موبایل آسیا.</span>
+    </h1>
+    <p class="sub">فروش اورجینال‌ترین آیفون‌ها از سری ۱۱ تا ۱۷ پرومکس و گلکسی S20 تا S24 اولترا — <b>با تضمین اصالت کالا.</b></p>
+    <div class="cta-row">
+      <a class="btn-black" href="mobileasia.html">مشاهده محصولات ↗</a>
+      <div class="badge-mini">
+        <span class="ic">✦</span>
+        <span class="txt">فروشگاه<br>معتبر اراک</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><b>۱۰۰٪</b><span>تضمین اصالت کالا</span></div>
+      <div class="stat"><b>رایگان</b><span>مشاوره‌ی خرید</span></div>
+      <div class="stat"><b>اراک</b><span>ملک، روبه‌روی بانک سپه</span></div>
+    </div>
+  </div>
+</section>
 
-  <section class="hero">
-    <div class="hero-text">
-      <img class="hero-logo" src="logo.png" alt="موبایل آسیا">
-      <span class="eyebrow">// فروشگاه تخصصی موبایل در اراک</span>
-      <h1><span>اورجینال‌ترین</span> آیفون و سامسونگ شهر</h1>
-      <p>فروش اورجینال‌ترین آیفون‌ها از سری ۱۱ تا ۱۷ پرومکس، گلکسی S20 تا S24 اولترا، به‌همراه ایرپاد و اپل‌واچ. تضمین اصالت کالا و مشاوره‌ی رایگان قبل از خرید.</p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="tel:+989916090254">تماس برای مشاوره و قیمت روز</a>
-        <a class="btn-ghost" href="mobileasia.html">مشاهده محصولات</a>
-      </div>
-    </div>
-    <div class="hero-media">
-      <div class="glow"></div>
-      <div class="phone-card">
-        <img src="iphone-hero.png" alt="آیفون ۱۷ پرو مکس">
-      </div>
-    </div>
-  </section>
+<main class="wrap">
 
   <section class="search-section">
     <div class="search-box">
