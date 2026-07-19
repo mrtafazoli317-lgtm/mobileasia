@@ -39,6 +39,39 @@
   .call-btn{ background: var(--orange); color:#fff; font-weight:700; font-size:0.85rem; padding: 9px 18px; border-radius: 30px; font-family:'IBM Plex Mono', monospace; transition: transform .15s ease, box-shadow .15s ease; }
   .call-btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 22px -8px var(--orange-glow); }
 
+  /* category icon strip */
+  .cat-strip{ padding: 18px 0 6px; }
+  .cat-strip-scroll{ display:flex; gap:14px; overflow-x:auto; padding-bottom:6px; scrollbar-width:none; }
+  .cat-strip-scroll::-webkit-scrollbar{ display:none; }
+  .cat-strip-item{
+    flex: 0 0 auto; display:flex; flex-direction:column; align-items:center; gap:8px;
+    width: 82px; text-align:center;
+  }
+  .cat-strip-item .icon-circle{
+    width:60px; height:60px; border-radius:50%; background: var(--panel);
+    border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    font-size:1.4rem; color: var(--orange-2); transition: border-color .15s ease, transform .15s ease;
+  }
+  .cat-strip-item:hover .icon-circle{ border-color: var(--orange); transform: translateY(-3px); }
+  .cat-strip-item span.label{ font-size:0.78rem; color: var(--text-dim); }
+
+  /* product preview rows */
+  .row-section{ padding: 34px 0 6px; }
+  .row-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px; }
+  .row-head h2{ font-size:1.25rem; font-weight:800; color: var(--orange-2); }
+  .row-head a{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--text-dim); transition: color .15s ease; }
+  .row-head a:hover{ color: var(--orange-2); }
+  .row-scroll{ display:flex; gap:14px; overflow-x:auto; padding-bottom:10px; scrollbar-width:none; }
+  .row-scroll::-webkit-scrollbar{ display:none; }
+  .row-scroll .product-card{
+    flex: 0 0 180px; background: var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding: 18px 16px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .row-scroll .product-card:hover{ transform: translateY(-4px); border-color: rgba(255,106,26,0.55); box-shadow: 0 16px 30px -20px var(--orange-glow); }
+  .row-scroll .product-card .model{ font-weight:800; font-size:0.98rem; margin-bottom:6px; color: var(--orange-2); }
+  .row-scroll .product-card .badge{ display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.66rem; color: var(--orange-2); border:1px solid rgba(217,84,15,0.3); padding: 2px 8px; border-radius: 20px; margin-bottom: 10px; }
+  .row-scroll .product-card .price{ font-family:'IBM Plex Mono', monospace; font-size:0.76rem; color: var(--text-dim); }
+
   /* hero */
   .hero{
     padding: 40px 0 20px;
@@ -163,6 +196,17 @@
   </div>
 </header>
 
+<div class="wrap cat-strip">
+  <div class="cat-strip-scroll">
+    <a class="cat-strip-item" href="mobileasia.html"><div class="icon-circle">📱</div><span class="label">آیفون</span></a>
+    <a class="cat-strip-item" href="samsung.html"><div class="icon-circle">📱</div><span class="label">سامسونگ</span></a>
+    <a class="cat-strip-item" href="used-phones.html"><div class="icon-circle">♻</div><span class="label">کار کرده</span></a>
+    <a class="cat-strip-item" href="guard-glass.html"><div class="icon-circle">🛡</div><span class="label">گارد و گلس</span></a>
+    <a class="cat-strip-item" href="mobileasia.html#accessories"><div class="icon-circle">🎧</div><span class="label">لوازم جانبی</span></a>
+    <a class="cat-strip-item" href="blog.html"><div class="icon-circle">✎</div><span class="label">وبلاگ</span></a>
+  </div>
+</div>
+
 <main class="wrap">
 
   <section class="hero">
@@ -199,6 +243,57 @@
       <p>موبایل آسیا حاصل تلاش یه جوون اراکیه که با پشتکار و صداقت، از صفر شروع کرد و قدم‌به‌قدم یکی از قابل‌اعتمادترین فروشگاه‌های موبایل شهر رو ساخت.</p>
       <p>سال‌ها زحمت، صبر و تعهد به کیفیت باعث شده امروز موبایل آسیا به‌عنوان یه اسم قابل‌اعتماد تو ذهن مشتری‌های اراکی شناخته بشه — نتیجه‌ی جوونی که هیچ‌وقت از تلاش دست نکشید.</p>
       <p>این مسیر، نمونه‌ی روشنی از اینه که با انگیزه، امانت‌داری و عشق به کار، می‌شه حتی تو یه بازار پررقابت هم اسمی ماندگار ساخت. موبایل آسیا امروز نتیجه‌ی همون تلاش خستگی‌ناپذیره.</p>
+    </div>
+  </section>
+
+  <section class="row-section">
+    <div class="row-head">
+      <h2>آیفون</h2>
+      <a href="mobileasia.html">نمایش همه ←</a>
+    </div>
+    <div class="row-scroll">
+      <div class="product-card"><div class="model">آیفون ۱۷ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">آیفون ۱۷ پرو</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">آیفون ۱۶ پرو مکس</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">آیفون ۱۵</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">آیفون ۱۴</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+    </div>
+  </section>
+
+  <section class="row-section">
+    <div class="row-head">
+      <h2>سامسونگ</h2>
+      <a href="samsung.html">نمایش همه ←</a>
+    </div>
+    <div class="row-scroll">
+      <div class="product-card"><div class="model">گلکسی S24 اولترا</div><span class="badge">۲۵۶ / ۵۱۲ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">گلکسی S24</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">گلکسی S23 اولترا</div><span class="badge">۲۵۶ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">گلکسی S22</div><span class="badge">۱۲۸ گیگ</span><div class="price">قیمت روز: تماس بگیرید</div></div>
+    </div>
+  </section>
+
+  <section class="row-section">
+    <div class="row-head">
+      <h2>محصولات کار کرده</h2>
+      <a href="used-phones.html">نمایش همه ←</a>
+    </div>
+    <div class="row-scroll">
+      <div class="product-card"><div class="model">آیفون ۱۲ کار کرده</div><span class="badge">۱۲۸ گیگ · سالم</span><div class="price">قیمت: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">آیفون ۱۳ پرو کار کرده</div><span class="badge">۲۵۶ گیگ · سالم</span><div class="price">قیمت: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">گلکسی S22 اولترا کار کرده</div><span class="badge">۲۵۶ گیگ · سالم</span><div class="price">قیمت: تماس بگیرید</div></div>
+    </div>
+  </section>
+
+  <section class="row-section">
+    <div class="row-head">
+      <h2>گارد و گلس</h2>
+      <a href="guard-glass.html">نمایش همه ←</a>
+    </div>
+    <div class="row-scroll">
+      <div class="product-card"><div class="model">گلس محافظ صفحه آیفون</div><span class="badge">تمام سری‌ها</span><div class="price">قیمت: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">قاب ضدضربه آیفون</div><span class="badge">مگ‌سیف / معمولی</span><div class="price">قیمت: تماس بگیرید</div></div>
+      <div class="product-card"><div class="model">گلس محافظ صفحه گلکسی S</div><span class="badge">تمام سری‌ها</span><div class="price">قیمت: تماس بگیرید</div></div>
     </div>
   </section>
 
