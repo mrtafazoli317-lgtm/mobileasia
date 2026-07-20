@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مشخصات فنی | موبایل آسیا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="theme-color" content="#ff6a1a">
+<style>
+  :root{
+    --bg: #ffffff; --panel: #fff6ee; --panel-2: #ffece0;
+    --line: rgba(20,15,10,0.1); --text: #201a15; --text-dim: #7a726a;
+    --orange: #ff6a1a; --orange-2: #d9540f; --orange-glow: rgba(255,106,26,0.22);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ color-scheme: light; scroll-behavior:smooth; }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#ffffff; --panel:#fff6ee; --panel-2:#ffece0; --line:rgba(20,15,10,0.1); --text:#201a15; --text-dim:#7a726a; }
+    body{ background:#ffffff !important; color:#201a15 !important; }
+  }
+  body{ background: var(--bg); color: var(--text); font-family: 'Vazirmatn', sans-serif; line-height: 1.8; }
+  @media (prefers-reduced-motion: reduce){ *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width: 1080px; margin:0 auto; padding: 0 22px; }
+
+  header{ position: sticky; top:0; z-index: 20; background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .header-row{ display:flex; align-items:center; justify-content:space-between; padding: 16px 0; gap:16px; flex-wrap:wrap; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ height:38px; width:auto; }
+  .brand-tabs{ display:flex; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; overflow-x:auto; scrollbar-width:none; max-width:100%; }
+  .brand-tabs::-webkit-scrollbar{ display:none; }
+  .brand-tabs a{ flex-shrink:0; padding: 6px 14px; border-radius: 20px; color: var(--text-dim); border: 1px solid var(--line); transition: all .15s ease; }
+  .brand-tabs a.active{ background: var(--orange); color:#fff; border-color: var(--orange); }
+  .brand-tabs a:hover:not(.active){ border-color: var(--orange); color: var(--orange-2); }
+  .call-btn{ background: var(--orange); color:#fff; font-weight:700; font-size:0.85rem; padding: 9px 18px; border-radius: 30px; font-family:'IBM Plex Mono', monospace; transition: transform .15s ease, box-shadow .15s ease; }
+  .call-btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 22px -8px var(--orange-glow); }
+
+  .back-link{ display:inline-block; margin: 26px 0 6px; font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color: var(--orange-2); }
+
+  .product-top{ display:flex; gap:32px; flex-wrap:wrap; padding: 20px 0 30px; align-items:flex-start; }
+  .product-media{ flex:1 1 260px; display:flex; justify-content:center; }
+  .product-media .frame{
+    width:100%; max-width:280px; aspect-ratio:1/1; border-radius:20px;
+    background: radial-gradient(circle at 30% 20%, rgba(255,106,26,0.16), rgba(255,106,26,0.03));
+    border: 1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .product-media .frame img{ width:100%; height:100%; object-fit:contain; }
+  .product-media .frame .icon{ width:90px; height:90px; color: var(--orange-2); }
+
+  .product-info{ flex:1 1 320px; }
+  .product-info .cat{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--orange-2); border:1px solid rgba(217,84,15,0.3); padding:3px 12px; border-radius:20px; display:inline-block; margin-bottom:14px; }
+  .product-info h1{ font-size: clamp(1.6rem, 4.5vw, 2.2rem); font-weight:900; margin-bottom:10px; }
+  .product-info .price-tag{ font-family:'IBM Plex Mono', monospace; color: var(--text-dim); font-size:0.95rem; margin-bottom:22px; }
+  .product-info .actions{ display:flex; gap:12px; flex-wrap:wrap; }
+  .btn-primary{ background: var(--orange); color:#fff; font-weight:800; padding: 13px 26px; border-radius: 10px; font-size:0.92rem; transition: transform .15s ease; }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .btn-ghost{ border:1px solid var(--line); color:var(--text); padding: 13px 26px; border-radius:10px; font-size:0.92rem; transition: border-color .15s ease; }
+  .btn-ghost:hover{ border-color: var(--orange); }
+
+  .specs-section{ padding: 20px 0 60px; }
+  .specs-section h2{ font-size:1.15rem; font-weight:800; color: var(--orange-2); margin-bottom:16px; }
+  .specs-table{ background: var(--panel); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .specs-row{ display:flex; padding:14px 20px; border-bottom:1px solid var(--line); font-size:0.92rem; }
+  .specs-row:last-child{ border-bottom:none; }
+  .specs-row .k{ width:120px; flex-shrink:0; color: var(--text-dim); font-family:'IBM Plex Mono', monospace; font-size:0.8rem; }
+  .specs-row .v{ flex:1; font-weight:600; }
+
+  .not-found{ padding:80px 0; text-align:center; color: var(--text-dim); }
+
+  footer{ border-top:1px solid var(--line); padding: 26px 0 40px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color: var(--text-dim); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+</style>
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+    <rect x="6" y="2" width="12" height="20" rx="2.4"/>
+    <line x1="10.5" y1="19" x2="13.5" y2="19" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="index.html"><img src="logo.png" alt="موبایل آسیا"></a>
+    <div class="brand-tabs">
+      <a href="index.html">خانه</a>
+      <a href="mobileasia.html">آیفون</a>
+      <a href="samsung.html">سامسونگ</a>
+      <a href="used-phones.html">کار کرده</a>
+      <a href="guard-glass.html">گارد و گلس</a>
+      <a href="blog.html">وبلاگ</a>
+    </div>
+    <a class="call-btn" href="tel:+989916090254">۰۹۹۱۶۰۹۰۲۵۴</a>
+  </div>
+</header>
+
+<main class="wrap" id="mainContent">
+  <!-- filled by JS -->
+</main>
+
+<footer class="wrap">
+  <span>© ۱۴۰۵ — موبایل آسیا</span>
+  <span>اراک، ملک، روبه‌روی بانک سپه · ۰۹۹۱۶۰۹۰۲۵۴</span>
+</footer>
+
+<script>
+var products = {
+  p1:  { name:"آیفون ۱۱", cat:"آیفون", backUrl:"mobileasia.html#p1", img:"iphone11.jpeg",
+    specs:{ "تراشه":"A13 Bionic", "نمایشگر":"۶.۱ اینچ Liquid Retina HD", "دوربین":"دوگانه ۱۲ مگاپیکسل", "باتری":"تا ۱۷ ساعت پخش ویدیو", "حافظه":"۱۲۸ / ۲۵۶ گیگابایت", "رنگ‌ها":"مشکی، سفید، قرمز، زرد، بنفش، سبز" } },
+  p2:  { name:"آیفون ۱۱ پرو", cat:"آیفون", backUrl:"mobileasia.html#p2", img:"iphone11pro.jpeg",
+    specs:{ "تراشه":"A13 Bionic", "نمایشگر":"۵.۸ اینچ Super Retina XDR", "دوربین":"سه‌گانه ۱۲ مگاپیکسل", "باتری":"تا ۱۸ ساعت پخش ویدیو", "حافظه":"۲۵۶ گیگابایت", "بدنه":"استیل ضدزنگ" } },
+  p3:  { name:"آیفون ۱۱ پرو مکس", cat:"آیفون", backUrl:"mobileasia.html#p3", img:"iphone11pro.jpeg",
+    specs:{ "تراشه":"A13 Bionic", "نمایشگر":"۶.۵ اینچ Super Retina XDR", "دوربین":"سه‌گانه ۱۲ مگاپیکسل", "باتری":"تا ۲۰ ساعت پخش ویدیو", "حافظه":"۲۵۶ / ۵۱۲ گیگابایت", "بدنه":"استیل ضدزنگ" } },
+  p4:  { name:"آیفون ۱۲", cat:"آیفون", backUrl:"mobileasia.html#p4",
+    specs:{ "تراشه":"A14 Bionic", "نمایشگر":"۶.۱ اینچ Super Retina XDR OLED", "دوربین":"دوگانه ۱۲ مگاپیکسل", "شبکه":"5G", "حافظه":"۱۲۸ گیگابایت", "بدنه":"قاب آلومینیوم مسطح" } },
+  p5:  { name:"آیفون ۱۲ مینی", cat:"آیفون", backUrl:"mobileasia.html#p5",
+    specs:{ "تراشه":"A14 Bionic", "نمایشگر":"۵.۴ اینچ Super Retina XDR OLED", "دوربین":"دوگانه ۱۲ مگاپیکسل", "شبکه":"5G", "حافظه":"۱۲۸ گیگابایت" } },
+  p6:  { name:"آیفون ۱۲ پرو", cat:"آیفون", backUrl:"mobileasia.html#p6",
+    specs:{ "تراشه":"A14 Bionic", "نمایشگر":"۶.۱ اینچ Super Retina XDR OLED", "دوربین":"سه‌گانه + سنسور LiDAR", "حافظه":"۲۵۶ گیگابایت", "بدنه":"استیل ضدزنگ" } },
+  p7:  { name:"آیفون ۱۲ پرو مکس", cat:"آیفون", backUrl:"mobileasia.html#p7",
+    specs:{ "تراشه":"A14 Bionic", "نمایشگر":"۶.۷ اینچ Super Retina XDR OLED", "دوربین":"سه‌گانه + سنسور LiDAR", "حافظه":"۲۵۶ گیگابایت", "بدنه":"استیل ضدزنگ" } },
+  p8:  { name:"آیفون ۱۳", cat:"آیفون", backUrl:"mobileasia.html#p8",
+    specs:{ "تراشه":"A15 Bionic", "نمایشگر":"۶.۱ اینچ Super Retina XDR", "دوربین":"دوگانه با حالت سینمایی", "حافظه":"۱۲۸ گیگابایت", "باتری":"عمر باتری بهبودیافته" } },
+  p9:  { name:"آیفون ۱۳ مینی", cat:"آیفون", backUrl:"mobileasia.html#p9",
+    specs:{ "تراشه":"A15 Bionic", "نمایشگر":"۵.۴ اینچ Super Retina XDR", "دوربین":"دوگانه با حالت سینمایی", "حافظه":"۱۲۸ گیگابایت" } },
+  p10: { name:"آیفون ۱۳ پرو", cat:"آیفون", backUrl:"mobileasia.html#p10",
+    specs:{ "تراشه":"A15 Bionic", "نمایشگر":"۶.۱ اینچ ProMotion ۱۲۰هرتز", "دوربین":"سه‌گانه با حالت ماکرو", "حافظه":"۲۵۶ گیگابایت", "بدنه":"استیل ضدزنگ" } },
+  p11: { name:"آیفون ۱۳ پرو مکس", cat:"آیفون", backUrl:"mobileasia.html#p11",
+    specs:{ "تراشه":"A15 Bionic", "نمایشگر":"۶.۷ اینچ ProMotion ۱۲۰هرتز", "دوربین":"سه‌گانه با حالت ماکرو", "حافظه":"۲۵۶ / ۵۱۲ گیگابایت", "بدنه":"استیل ضدزنگ" } },
+  p12: { name:"آیفون ۱۴", cat:"آیفون", backUrl:"mobileasia.html#p12",
+    specs:{ "تراشه":"A15 Bionic", "نمایشگر":"۶.۱ اینچ Super Retina XDR", "دوربین":"دوگانه با فوکوس تطبیقی", "حافظه":"۱۲۸ گیگابایت", "ویژگی":"تشخیص تصادف (Crash Detection)" } },
+  p13: { name:"آیفون ۱۴ پلاس", cat:"آیفون", backUrl:"mobileasia.html#p13",
+    specs:{ "تراشه":"A15 Bionic", "نمایشگر":"۶.۷ اینچ Super Retina XDR", "دوربین":"دوگانه با فوکوس تطبیقی", "حافظه":"۱۲۸ گیگابایت" } },
+  p14: { name:"آیفون ۱۴ پرو", cat:"آیفون", backUrl:"mobileasia.html#p14",
+    specs:{ "تراشه":"A16 Bionic", "نمایشگر":"۶.۱ اینچ با Dynamic Island", "دوربین":"اصلی ۴۸ مگاپیکسل", "حافظه":"۲۵۶ گیگابایت", "بدنه":"استیل ضدزنگ" } },
+  p15: { name:"آیفون ۱۴ پرو مکس", cat:"آیفون", backUrl:"mobileasia.html#p15",
+    specs:{ "تراشه":"A16 Bionic", "نمایشگر":"۶.۷ اینچ با Dynamic Island", "دوربین":"اصلی ۴۸ مگاپیکسل", "حافظه":"۲۵۶ / ۵۱۲ گیگابایت", "بدنه":"استیل ضدزنگ" } },
+  p16: { name:"آیفون ۱۵", cat:"آیفون", backUrl:"mobileasia.html#p16",
+    specs:{ "تراشه":"A16 Bionic", "نمایشگر":"۶.۱ اینچ با Dynamic Island", "دوربین":"اصلی ۴۸ مگاپیکسل", "پورت":"USB-C", "حافظه":"۱۲۸ گیگابایت" } },
+  p17: { name:"آیفون ۱۵ پلاس", cat:"آیفون", backUrl:"mobileasia.html#p17",
+    specs:{ "تراشه":"A16 Bionic", "نمایشگر":"۶.۷ اینچ با Dynamic Island", "دوربین":"اصلی ۴۸ مگاپیکسل", "پورت":"USB-C", "حافظه":"۱۲۸ گیگابایت" } },
+  p18: { name:"آیفون ۱۵ پرو", cat:"آیفون", backUrl:"mobileasia.html#p18",
+    specs:{ "تراشه":"A17 Pro", "نمایشگر":"۶.۱ اینچ ProMotion", "دوربین":"اصلی ۴۸ مگاپیکسل", "بدنه":"تیتانیوم", "پورت":"USB-C", "حافظه":"۲۵۶ گیگابایت" } },
+  p19: { name:"آیفون ۱۵ پرو مکس", cat:"آیفون", backUrl:"mobileasia.html#p19",
+    specs:{ "تراشه":"A17 Pro", "نمایشگر":"۶.۷ اینچ ProMotion", "دوربین":"زوم پریسکوپی ۵ برابر", "بدنه":"تیتانیوم", "پورت":"USB-C", "حافظه":"۲۵۶ / ۵۱۲ گیگابایت" } },
+  p20: { name:"آیفون ۱۶", cat:"آیفون", backUrl:"mobileasia.html#p20",
+    specs:{ "تراشه":"A18", "نمایشگر":"۶.۱ اینچ با Dynamic Island", "دوربین":"دوگانه پیشرفته", "ویژگی":"دکمه Camera Control", "حافظه":"۱۲۸ گیگابایت" } },
+  p21: { name:"آیفون ۱۶ پلاس", cat:"آیفون", backUrl:"mobileasia.html#p21",
+    specs:{ "تراشه":"A18", "نمایشگر":"۶.۷ اینچ با Dynamic Island", "دوربین":"دوگانه پیشرفته", "ویژگی":"دکمه Camera Control", "حافظه":"۱۲۸ گیگابایت" } },
+  p22: { name:"آیفون ۱۶ پرو", cat:"آیفون", backUrl:"mobileasia.html#p22",
+    specs:{ "تراشه":"A18 Pro", "نمایشگر":"۶.۳ اینچ ProMotion", "دوربین":"سه‌گانه ۴۸ مگاپیکسل", "بدنه":"تیتانیوم", "حافظه":"۲۵۶ گیگابایت" } },
+  p23: { name:"آیفون ۱۶ پرو مکس", cat:"آیفون", backUrl:"mobileasia.html#p23",
+    specs:{ "تراشه":"A18 Pro", "نمایشگر":"۶.۹ اینچ ProMotion", "دوربین":"سه‌گانه ۴۸ مگاپیکسل", "بدنه":"تیتانیوم", "حافظه":"۲۵۶ / ۵۱۲ گیگابایت" } },
+  p24: { name:"آیفون ۱۶ ای (16e)", cat:"آیفون", backUrl:"mobileasia.html#p24",
+    specs:{ "تراشه":"A18", "نمایشگر":"۶.۱ اینچ OLED", "دوربین":"تک‌لنز ۴۸ مگاپیکسل", "مودم":"تراشه اختصاصی اپل C1", "حافظه":"۱۲۸ گیگابایت" } },
+  p25: { name:"آیفون ۱۷", cat:"آیفون", backUrl:"mobileasia.html#p25",
+    specs:{ "تراشه":"A19", "نمایشگر":"۶.۳ اینچ OLED", "دوربین":"دوگانه پیشرفته", "حافظه":"۱۲۸ / ۲۵۶ گیگابایت" } },
+  p26: { name:"آیفون ایر (17 Air)", cat:"آیفون", backUrl:"mobileasia.html#p26",
+    specs:{ "تراشه":"A19 Pro", "نمایشگر":"۶.۵ اینچ OLED", "بدنه":"نازک‌ترین آیفون تاریخ", "حافظه":"۲۵۶ گیگابایت" } },
+  p27: { name:"آیفون ۱۷ پرو", cat:"آیفون", backUrl:"mobileasia.html#p27",
+    specs:{ "تراشه":"A19 Pro", "نمایشگر":"۶.۳ اینچ ProMotion", "دوربین":"سه‌گانه پیشرفته", "بدنه":"آلومینیوم یکپارچه", "حافظه":"۲۵۶ گیگابایت" } },
+  p28: { name:"آیفون ۱۷ پرو مکس", cat:"آیفون", backUrl:"mobileasia.html#p28",
+    specs:{ "تراشه":"A19 Pro", "نمایشگر":"۶.۹ اینچ ProMotion", "دوربین":"سه‌گانه پیشرفته", "باتری":"بزرگ‌ترین باتری در بین آیفون‌ها", "حافظه":"۲۵۶ / ۵۱۲ / ۱ ترابایت" } },
+
+  acc1: { name:"ایرپاد (AirPods)", cat:"لوازم جانبی", backUrl:"mobileasia.html#acc1",
+    specs:{ "مدل‌های موجود":"نسل ۲، نسل ۳، ایرپاد پرو ۲، ایرپاد مکس", "ویژگی":"حذف نویز فعال (در مدل‌های پرو)", "گارانتی":"اصالت کالا تضمینی" } },
+  acc2: { name:"اپل واچ (Apple Watch)", cat:"لوازم جانبی", backUrl:"mobileasia.html#acc2",
+    specs:{ "مدل‌های موجود":"سری ۹، سری ۱۰، اولترا ۲، SE", "سایزها":"چند سایز و رنگ‌بندی متنوع", "گارانتی":"اصالت کالا تضمینی" } },
+
+  s1:  { name:"گلکسی S20", cat:"سامسونگ", backUrl:"samsung.html#s1",
+    specs:{ "تراشه":"Snapdragon 865 / Exynos 990", "نمایشگر":"۶.۲ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه با زوم ترکیبی", "حافظه":"۱۲۸ گیگابایت" } },
+  s2:  { name:"گلکسی S20 پلاس", cat:"سامسونگ", backUrl:"samsung.html#s2",
+    specs:{ "تراشه":"Snapdragon 865 / Exynos 990", "نمایشگر":"۶.۷ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"چهارگانه با سنسور ToF", "حافظه":"۱۲۸ گیگابایت" } },
+  s3:  { name:"گلکسی S20 اولترا", cat:"سامسونگ", backUrl:"samsung.html#s3",
+    specs:{ "تراشه":"Snapdragon 865 / Exynos 990", "نمایشگر":"۶.۹ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"اصلی ۱۰۸ مگاپیکسل، زوم ۱۰۰x", "حافظه":"۲۵۶ گیگابایت" } },
+  s4:  { name:"گلکسی S20 FE", cat:"سامسونگ", backUrl:"samsung.html#s4",
+    specs:{ "تراشه":"Snapdragon 865 / Exynos 990", "نمایشگر":"۶.۵ اینچ Super AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۱۲۸ گیگابایت", "ویژگی":"نسخه اقتصادی‌تر سری S20" } },
+  s5:  { name:"گلکسی S21", cat:"سامسونگ", backUrl:"samsung.html#s5",
+    specs:{ "تراشه":"Snapdragon 888 / Exynos 2100", "نمایشگر":"۶.۲ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۱۲۸ گیگابایت" } },
+  s6:  { name:"گلکسی S21 پلاس", cat:"سامسونگ", backUrl:"samsung.html#s6",
+    specs:{ "تراشه":"Snapdragon 888 / Exynos 2100", "نمایشگر":"۶.۷ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۱۲۸ گیگابایت" } },
+  s7:  { name:"گلکسی S21 اولترا", cat:"سامسونگ", backUrl:"samsung.html#s7",
+    specs:{ "تراشه":"Snapdragon 888 / Exynos 2100", "نمایشگر":"۶.۸ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"چهارگانه با زوم ۱۰۰x", "قلم":"پشتیبانی از S Pen", "حافظه":"۲۵۶ گیگابایت" } },
+  s8:  { name:"گلکسی S21 FE", cat:"سامسونگ", backUrl:"samsung.html#s8",
+    specs:{ "تراشه":"Snapdragon 888 / Exynos 2100", "نمایشگر":"۶.۴ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۱۲۸ گیگابایت" } },
+  s9:  { name:"گلکسی S22", cat:"سامسونگ", backUrl:"samsung.html#s9",
+    specs:{ "تراشه":"Snapdragon 8 Gen 1 / Exynos 2200", "نمایشگر":"۶.۱ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۱۲۸ گیگابایت" } },
+  s10: { name:"گلکسی S22 پلاس", cat:"سامسونگ", backUrl:"samsung.html#s10",
+    specs:{ "تراشه":"Snapdragon 8 Gen 1 / Exynos 2200", "نمایشگر":"۶.۶ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۲۵۶ گیگابایت" } },
+  s11: { name:"گلکسی S22 اولترا", cat:"سامسونگ", backUrl:"samsung.html#s11",
+    specs:{ "تراشه":"Snapdragon 8 Gen 1 / Exynos 2200", "نمایشگر":"۶.۸ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"اصلی ۱۰۸ مگاپیکسل", "قلم":"S Pen داخلی", "حافظه":"۲۵۶ / ۵۱۲ گیگابایت" } },
+  s12: { name:"گلکسی S23", cat:"سامسونگ", backUrl:"samsung.html#s12",
+    specs:{ "تراشه":"Snapdragon 8 Gen 2 for Galaxy", "نمایشگر":"۶.۱ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۱۲۸ / ۲۵۶ گیگابایت" } },
+  s13: { name:"گلکسی S23 پلاس", cat:"سامسونگ", backUrl:"samsung.html#s13",
+    specs:{ "تراشه":"Snapdragon 8 Gen 2 for Galaxy", "نمایشگر":"۶.۶ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۲۵۶ گیگابایت" } },
+  s14: { name:"گلکسی S23 اولترا", cat:"سامسونگ", backUrl:"samsung.html#s14",
+    specs:{ "تراشه":"Snapdragon 8 Gen 2 for Galaxy", "نمایشگر":"۶.۸ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"اصلی ۲۰۰ مگاپیکسل", "قلم":"S Pen داخلی", "حافظه":"۲۵۶ / ۵۱۲ گیگابایت" } },
+  s15: { name:"گلکسی S23 FE", cat:"سامسونگ", backUrl:"samsung.html#s15",
+    specs:{ "تراشه":"Exynos 2200", "نمایشگر":"۶.۴ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "حافظه":"۱۲۸ گیگابایت" } },
+  s16: { name:"گلکسی S24", cat:"سامسونگ", backUrl:"samsung.html#s16",
+    specs:{ "تراشه":"Snapdragon 8 Gen 3 / Exynos 2400", "نمایشگر":"۶.۲ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "هوش مصنوعی":"قابلیت‌های Galaxy AI", "حافظه":"۱۲۸ / ۲۵۶ گیگابایت" } },
+  s17: { name:"گلکسی S24 پلاس", cat:"سامسونگ", backUrl:"samsung.html#s17",
+    specs:{ "تراشه":"Snapdragon 8 Gen 3 / Exynos 2400", "نمایشگر":"۶.۷ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "هوش مصنوعی":"قابلیت‌های Galaxy AI", "حافظه":"۲۵۶ گیگابایت" } },
+  s18: { name:"گلکسی S24 اولترا", cat:"سامسونگ", backUrl:"samsung.html#s18",
+    specs:{ "تراشه":"Snapdragon 8 Gen 3 for Galaxy", "نمایشگر":"۶.۸ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"اصلی ۲۰۰ مگاپیکسل", "بدنه":"تیتانیوم", "قلم":"S Pen داخلی", "حافظه":"۲۵۶ / ۵۱۲ / ۱ ترابایت" } },
+  s19: { name:"گلکسی S24 FE", cat:"سامسونگ", backUrl:"samsung.html#s19",
+    specs:{ "تراشه":"Exynos 2400", "نمایشگر":"۶.۷ اینچ Dynamic AMOLED ۱۲۰هرتز", "دوربین":"سه‌گانه", "هوش مصنوعی":"قابلیت‌های Galaxy AI", "حافظه":"۱۲۸ / ۲۵۶ گیگابایت" } }
+};
+
+function renderProduct(){
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id');
+  var main = document.getElementById('mainContent');
+  var p = products[id];
+
+  if(!p){
+    main.innerHTML = '<div class="not-found"><p>محصول مورد نظر پیدا نشد.</p><a class="btn-primary" href="index.html" style="display:inline-block;margin-top:16px;">بازگشت به خانه</a></div>';
+    return;
+  }
+
+  document.title = p.name + ' | موبایل آسیا';
+
+  var mediaHtml = p.img
+    ? '<img src="' + p.img + '" alt="' + p.name + '">'
+    : '<svg class="icon" viewBox="0 0 24 24"><use href="#icon-phone"/></svg>';
+
+  var specsHtml = '';
+  for(var key in p.specs){
+    specsHtml += '<div class="specs-row"><div class="k">' + key + '</div><div class="v">' + p.specs[key] + '</div></div>';
+  }
+
+  main.innerHTML =
+    '<a class="back-link" href="' + p.backUrl + '">← بازگشت به لیست</a>' +
+    '<div class="product-top">' +
+      '<div class="product-media"><div class="frame">' + mediaHtml + '</div></div>' +
+      '<div class="product-info">' +
+        '<span class="cat">' + p.cat + '</span>' +
+        '<h1>' + p.name + '</h1>' +
+        '<div class="price-tag">قیمت روز: تماس بگیرید</div>' +
+        '<div class="actions">' +
+          '<a class="btn-primary" href="tel:+989916090254">تماس برای قیمت</a>' +
+          '<a class="btn-ghost" href="' + p.backUrl + '">مشاهده مدل‌های مشابه</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="specs-section">' +
+      '<h2>مشخصات فنی</h2>' +
+      '<div class="specs-table">' + specsHtml + '</div>' +
+    '</div>';
+}
+
+renderProduct();
+</script>
+
+</body>
+</html>
